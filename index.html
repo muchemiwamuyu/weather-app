@@ -8,14 +8,22 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <title>Weather | today</title>
 </head>
-<body>
+<body class="bg-gray-900">
     <h1 class="text-white text-2xl text-center font-bold">City weather app</h1>
     <div class="card w-full flex justify-center items-center p-2 bg-cyan-600  mb-3 ">
         <label for="search"></label>
         <input type="searchBar" id="search" placeholder="Enter city name..." class="absolute border border-2px border-white text-center" required>
         <button id="mainBtn" class="mt-[100px]  border border-2px border-white p-2">Search city</button>
     </div>
-    <div id="content"></div>
-    <script src="./app.js"></script>
+    <div id="content">
+        <div id="box1"></div>
+        <div id="box2"></div>
+        <div id="box3"></div>
+        <div id="box4"></div>
+        <div id="box5"></div>
+        <div id="box6"></div>
+
+    </div>
+    <script type="module" src="./app.js"></script>
 </body>
 </html>

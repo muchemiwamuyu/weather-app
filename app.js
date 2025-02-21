@@ -1,4 +1,5 @@
-const API_KEY = "0ee48ac852bb26bf408d6516080db9d5";
+import config from "./config.js";
+const API_KEY =  config.WEATHER_API_KEY;
 
 $(function () {
   $("#mainBtn").on("click", function () {
@@ -17,24 +18,100 @@ $(function () {
         $("#content").css({
             "width": "auto",
             "height": "250px",
-            "background-color": "red",
+            "background-color": "blue",
             "margin": "auto",
             "padding": "10px",
             "display": "flex",
-            "justify-content": "space-between",
+            "gap": "5px",
             "align-items": "center", 
+        });
+        let countryName = `<h3> Location: ${data.name}<h3/>`;
+        let weather = `<p>Weather: <br/> ${data.weather[0].description}</p>`;
+        let pressure = ` <p>Pressure:  ${data.main.pressure} Pa</p>`;
+        let temp = `<p>Temperature: ${data.main.temp}℃</p>`;
+        let humidity = ` <p>Humidity:  ${data.main.humidity} %</p>`;
+        let speed = `<p>Speed:  ${data.wind.speed} m/s</p>`;
+
+        $("#box1").css({
+            "width": "180px",
+            "height": "70px",
+            "background-color": "white",
+            "box-shadow": "5px 5px 15px rgba(0, 0, 0, 0.2)",
+            "color": "red",
+            "font-weight": "bold",
+            "display": "flex",
+            "justify-content": "center",
+            "align-items": "center",
+            "border-radius": "20px"
+        });
+        $("#box2").css({
+            "width": "180px",
+            "height": "70px",
+            "background-color": "white",
+            "box-shadow": "5px 5px 15px rgba(0, 0, 0, 0.2)",
+            "color": "red",
+            "font-weight": "bold",
+            "display": "flex",
+            "justify-content": "center",
+            "align-items": "center",
+            "border-radius": "20px"
         })
-        const weatherInfo = `
-                <h3>${data.name}, <br/> ${data.sys.country}</h3>
-                <p>Weather: <br/>${data.weather[0].description}</p>
-                <p>Pressure: <br/> ${data.main.pressure}</p>
-                <p>Temperature: <br/> ${data.main.temp}</p>
-                <p>Humidity:  <br/>${data.main.humidity}</p>
-                 <p>Speed:  <br/>${data.wind.speed}</p>
-                `;
+        $("#box3").css({
+            "width": "180px",
+            "height": "70px",
+            "background-color": "white",
+            "box-shadow": "5px 5px 15px rgba(0, 0, 0, 0.2)",
+            "color": "red",
+            "font-weight": "bold",
+            "display": "flex",
+            "justify-content": "center",
+            "align-items": "center",
+            "border-radius": "20px"
+        });
+        $("#box4").css({
+            "width": "180px",
+            "height": "70px",
+            "background-color": "white",
+            "box-shadow": "5px 5px 15px rgba(0, 0, 0, 0.2)",
+            "color": "red",
+            "font-weight": "bold",
+            "display": "flex",
+            "justify-content": "center",
+            "align-items": "center",
+            "border-radius": "20px"
+        });
+        $("#box5").css({
+            "width": "180px",
+            "height": "70px",
+            "background-color": "white",
+            "box-shadow": "5px 5px 15px rgba(0, 0, 0, 0.2)",
+            "color": "red",
+            "font-weight": "bold",
+            "display": "flex",
+            "justify-content": "center",
+            "align-items": "center",
+            "border-radius": "20px"
+        });
+        $("#box6").css({
+            "width": "180px",
+            "height": "70px",
+            "background-color": "white",
+            "box-shadow": "5px 5px 15px rgba(0, 0, 0, 0.2)",
+            "color": "red",
+            "font-weight": "bold",
+            "display": "flex",
+            "justify-content": "center",
+            "align-items": "center",
+            "border-radius": "20px"
+        });
+       
+        $("#box1").html(countryName);
+        $("#box2").html(weather);
+        $("#box3").html(pressure);
+        $("#box4").html(temp);
+        $("#box5").html(humidity);
+        $("#box6").html(speed);
 
-
-        $("#content").html(weatherInfo);
       },
     });
   });
